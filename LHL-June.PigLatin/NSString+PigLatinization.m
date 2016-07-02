@@ -13,17 +13,27 @@
 
 - (NSString *)stringByPigLatinization {
     
-    NSMutableArray *outputArray = [NSMutableArray new];
+    NSMutableArray *convertedArray = [NSMutableArray new];
     
     
-    NSString *userInput = @"air universe";
+    NSString *userInput = @"user input";
+    
+    NSString *vowel = @"aeiou";
+    NSCharacterSet *vowels = [NSCharacterSet characterSetWithCharactersInString:vowel];
+    if (vowel in userInput) {
+        
+        NSRange *location = location;
+        NSRange *length = length;
 
-//    NSCharacterSet *vowels = @"a";
-    
-    
-    if (NSString *vowel in userInput) {
+        NSString *beggining = [NSMakeRange:(location, length)];
         
     }
+    
+    
+    
+//    if (NSString *vowel in userInput) {
+//        
+//    }
     
     
     // NSCharacterSet
@@ -35,7 +45,7 @@
     
     
     // PigLatinized words objects in array join with "_".
-//    return [array = [outputArray componentsJoinedByString:@" "]];
+    return [convertedArray componentsJoinedByString:@" "];
 }
 
 @end
