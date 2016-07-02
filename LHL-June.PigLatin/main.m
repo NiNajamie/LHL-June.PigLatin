@@ -19,9 +19,9 @@ int main(int argc, const char * argv[]) {
         
         NSString *commandString = [[[NSString stringWithUTF8String:userCommands] lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        NSLog(@"Input was: %@", commandString);
+        NSLog(@"lowercase of input was: %@", commandString);
         
-    
+        [commandString stringByPigLatinization];
     
     }
     return 0;

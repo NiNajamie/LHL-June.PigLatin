@@ -16,20 +16,42 @@
     NSMutableArray *convertedArray = [NSMutableArray new];
     
     
-    NSString *userInput = @"user input";
     
-    NSString *vowel = @"aeiou";
-    NSCharacterSet *vowels = [NSCharacterSet characterSetWithCharactersInString:vowel];
-    if (vowel in userInput) {
-        
-        NSRange *location = location;
-        NSRange *length = length;
+    
+    NSString *userInput = @"Chips KAlE";
+    // chips
+    NSString *firstWord = [[[userInput componentsSeparatedByString:@" "] objectAtIndex:0] lowercaseString];
 
-        NSString *beggining = [NSMakeRange:(location, length)];
+    
+    NSString *vowels = @"aeiou";
+    
+    // cut vowels string into piece 'a','e'...
+    // vowel = @["a", "e", "i", "o", "u"]; // unsorted
+    NSCharacterSet *vowel = [NSCharacterSet characterSetWithCharactersInString:vowels];
+    
+    
+    // if you find a vowel in firstWord, remove all characters before the vowel
+    NSArray *beggining = [firstWord componentsSeparatedByCharactersInSet:vowel];
+    NSLog(@"The characters of beggining are-- %@", beggining[0]);
+    
+    NSString *ending = [[firstWord stringByReplacingOccurrencesOfString:beggining[0] withString:@""] capitalizedString];
         
-    }
+    
+    NSLog(@"%@%@ay", ending, beggining[0]);
     
     
+    
+    
+    
+    
+    
+    
+    
+    //        NSRange *location = location;
+//        NSRange *length = length;
+//
+//        NSString *beggining = [NSMakeRange:(location, length)];
+        
     
 //    if (NSString *vowel in userInput) {
 //        
@@ -38,10 +60,6 @@
     
     // NSCharacterSet
     // NSRangeMake(location, length)
-    
-//    if ([userInput rangeOfString:vowels].location != NSNotFound) {
-//        
-//    }
     
     
     // PigLatinized words objects in array join with "_".
