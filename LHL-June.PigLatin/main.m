@@ -15,14 +15,13 @@ int main(int argc, const char * argv[]) {
         char userCommands[200];
         printf("Enter some words (PigLatinization): ");
         fgets(userCommands, 200, stdin);
-        printf("User input was: %s", userCommands);
+//        printf("User input was: %s", userCommands);
         
         NSString *commandString = [[[NSString stringWithUTF8String:userCommands] lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        NSLog(@"lowercase of input was: %@", commandString);
+//        NSLog(@"lowercase of input was: %@", commandString);
         
         [commandString stringByPigLatinization];
-    
     }
     return 0;
 }

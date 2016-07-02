@@ -18,10 +18,12 @@
     
     
     
-    NSString *userInput = @"Chips KAlE";
+    NSString *userInput = @"ARIanNa KAle vieNNa Soul";
     // chips
     NSString *firstWord = [[[userInput componentsSeparatedByString:@" "] objectAtIndex:0] lowercaseString];
-
+    NSLog(@"firstWord-- %@", firstWord);
+    
+    NSString *second = [[[userInput componentsSeparatedByString:@" "] objectAtIndex:1] lowercaseString];
     
     NSString *vowels = @"aeiou";
     
@@ -34,14 +36,20 @@
     NSArray *beggining = [firstWord componentsSeparatedByCharactersInSet:vowel];
     NSLog(@"The characters of beggining are-- %@", beggining[0]);
     
+    NSArray *secondBegin = [second componentsSeparatedByCharactersInSet:vowel];
+    NSLog(@"The 2nd characters of beggining are-- %@", secondBegin[0]);
+    
     NSString *ending = [[firstWord stringByReplacingOccurrencesOfString:beggining[0] withString:@""] capitalizedString];
+    
+    NSString *secondEnd = [[second stringByReplacingOccurrencesOfString:secondBegin[0] withString:@""] capitalizedString];
         
     
-    NSLog(@"%@%@ay", ending, beggining[0]);
-    
-    
-    
-    
+    NSString *convertedWord = [NSString stringWithFormat:@"%@%@ay", ending, beggining[0]];
+    [convertedArray addObject:[convertedWord stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+
+    NSString *secondConverted = [NSString stringWithFormat:@"%@%@ay", secondEnd, secondBegin[0]];
+    [convertedArray addObject:secondConverted];
+    NSLog(@"array--%@",[convertedArray componentsJoinedByString:@" "]);
     
     
     
